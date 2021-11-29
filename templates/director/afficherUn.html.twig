@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Un.e Réalisateur.trice{% endblock %}
+
+{% block body %}
+<h2 class="border border-dark rounded p-2 m-2 text-white bg-primary">{{director.prenom}} {{director.nom}}</h2>
+
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+        <img src="{{(director.photo) }}" style="width:300px"><br><br>
+        Liste de ses films :<br>
+       {%for movie in director.movie %}
+            - {{movie.title}}<br>
+        {% endfor %}<br>
+        <a href="{{ path('modifdirector', {'id':director.id}) }}">MODIFIER</a><br>
+        <hr>
+
+{% endblock %}

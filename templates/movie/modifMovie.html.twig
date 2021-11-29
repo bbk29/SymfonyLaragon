@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modif. Films{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { bdireckground: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<h2 class="border border-dark rounded p-2 m-2 text-white bg-primary">Modifier {{movie.title}}</h2>
+
+    {{form_start(form)}}
+    {{form_widget(form)}}
+    <input type="submit" value="Enregistrer">
+    {{form_end(form)}}
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Genres{% endblock %}
+
+{% block body %}
+<h2 class="border border-dark rounded p-2 m-2 text-white bg-primary">Genres</h2>
+
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { bdireckground: #F5F5F5; padding: 2px 6px; }
+</style>
+
+    {% for genre in genres %}
+        <h4> {{genre.type}} </h4>
+        <br>
+        <a href="{{ path('modifgenre', {'id':genre.id}) }}">MODIFIER</a><br>
+        <hr>
+    {% endfor %}
+
+{% endblock %}
